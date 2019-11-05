@@ -14,7 +14,16 @@ pipeline {
     stage('Deploy') {
       steps {
         sh 'echo "Deploy to server"'
+        sh 'echo "data_subor" > generatedFile.txt'
       }
     }
+
+    
+}
+post {
+  always {
+    archiveArtifact artifact: 'generatedFile.txt', onlyIfSuccessful: true
+    }
   }
-}  
+}    
+  
