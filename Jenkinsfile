@@ -19,11 +19,12 @@ pipeline {
     }
 
     
-}
-post {
-  always {
-    archiveArtifact artifact: 'generatedFile.txt', onlyIfSuccessful: true
+  }
+  post {
+    always {
+      archiveArtifact artifact: 'generatedFile.txt', onlyIfSuccessful: true
     }
   }
+  
 }    
   
